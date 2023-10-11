@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form));
             this.btnExecute = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
@@ -38,6 +39,8 @@
             this.txtMultiCommand = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtOneCommand = new System.Windows.Forms.TextBox();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.picDrawer1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,10 +96,23 @@
             resources.ApplyResources(this.txtOneCommand, "txtOneCommand");
             this.txtOneCommand.Name = "txtOneCommand";
             // 
+            // notifyIcon1
+            // 
+            resources.ApplyResources(this.notifyIcon1, "notifyIcon1");
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.textBox1, "textBox1");
+            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.textBox1.Name = "textBox1";
+            // 
             // Form
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.txtOneCommand);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtMultiCommand);
@@ -125,6 +141,8 @@
         private System.Windows.Forms.TextBox txtMultiCommand;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtOneCommand;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
