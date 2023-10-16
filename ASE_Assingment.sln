@@ -5,7 +5,7 @@ VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASE_Assingment", "ASE_Assingment\ASE_Assingment.csproj", "{83A0ED46-E843-4A50-8A99-9871B759AE7C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Applicatiom_1", "Applicatiom 1\Applicatiom_1.csproj", "{37EA8187-31D4-4463-864F-9AE23FF1C120}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application_1", "Applicatiom 1\Application_1.csproj", "{37EA8187-31D4-4463-864F-9AE23FF1C120}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
