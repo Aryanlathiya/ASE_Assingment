@@ -34,32 +34,41 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.picDrawer1 = new System.Windows.Forms.PictureBox();
             this.btnReset = new System.Windows.Forms.Button();
-            this.lblSingalCommand = new System.Windows.Forms.Label();
-            this.lblMultiCommand = new System.Windows.Forms.Label();
             this.txtMultiCommand = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.txtOneCommand = new System.Windows.Forms.TextBox();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             ((System.ComponentModel.ISupportInitialize)(this.picDrawer1)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnExecute
             // 
+            this.btnExecute.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             resources.ApplyResources(this.btnExecute, "btnExecute");
             this.btnExecute.Name = "btnExecute";
-            this.btnExecute.UseVisualStyleBackColor = true;
+            this.btnExecute.UseVisualStyleBackColor = false;
             // 
             // btnClear
             // 
+            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             resources.ApplyResources(this.btnClear, "btnClear");
             this.btnClear.Name = "btnClear";
-            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.UseVisualStyleBackColor = false;
             // 
             // picDrawer1
             // 
             this.picDrawer1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.picDrawer1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.picDrawer1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.picDrawer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.picDrawer1, "picDrawer1");
             this.picDrawer1.Name = "picDrawer1";
@@ -67,29 +76,16 @@
             // 
             // btnReset
             // 
+            this.btnReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             resources.ApplyResources(this.btnReset, "btnReset");
             this.btnReset.Name = "btnReset";
-            this.btnReset.UseVisualStyleBackColor = true;
-            // 
-            // lblSingalCommand
-            // 
-            resources.ApplyResources(this.lblSingalCommand, "lblSingalCommand");
-            this.lblSingalCommand.Name = "lblSingalCommand";
-            // 
-            // lblMultiCommand
-            // 
-            resources.ApplyResources(this.lblMultiCommand, "lblMultiCommand");
-            this.lblMultiCommand.Name = "lblMultiCommand";
+            this.btnReset.UseVisualStyleBackColor = false;
             // 
             // txtMultiCommand
             // 
+            this.txtMultiCommand.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             resources.ApplyResources(this.txtMultiCommand, "txtMultiCommand");
             this.txtMultiCommand.Name = "txtMultiCommand";
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
             // 
             // txtOneCommand
             // 
@@ -108,23 +104,60 @@
             this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.textBox1.Name = "textBox1";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtMultiCommand);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.TabStop = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.picDrawer1);
+            resources.ApplyResources(this.groupBox2, "groupBox2");
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.TabStop = false;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.txtOneCommand);
+            resources.ApplyResources(this.groupBox3, "groupBox3");
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.TabStop = false;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.btnExecute);
+            this.groupBox4.Controls.Add(this.btnClear);
+            this.groupBox4.Controls.Add(this.btnReset);
+            resources.ApplyResources(this.groupBox4, "groupBox4");
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.TabStop = false;
+            // 
+            // fileSystemWatcher1
+            // 
+            this.fileSystemWatcher1.EnableRaisingEvents = true;
+            this.fileSystemWatcher1.SynchronizingObject = this;
+            // 
             // Form
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.txtOneCommand);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtMultiCommand);
-            this.Controls.Add(this.lblMultiCommand);
-            this.Controls.Add(this.lblSingalCommand);
-            this.Controls.Add(this.btnReset);
-            this.Controls.Add(this.picDrawer1);
-            this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.btnExecute);
             this.Name = "Form";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picDrawer1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -136,13 +169,15 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.PictureBox picDrawer1;
         private System.Windows.Forms.Button btnReset;
-        private System.Windows.Forms.Label lblSingalCommand;
-        private System.Windows.Forms.Label lblMultiCommand;
         private System.Windows.Forms.TextBox txtMultiCommand;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtOneCommand;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.IO.FileSystemWatcher fileSystemWatcher1;
     }
 }
 
