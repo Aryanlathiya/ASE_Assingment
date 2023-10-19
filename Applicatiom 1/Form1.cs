@@ -68,7 +68,7 @@ namespace Applicatiom_1
                 }
                 if(txtOneCommand.Text.Trim() != string.Empty) 
                 {
-                    // Will implement runCommands 
+                     
                     draw.runCommands(txtOneCommand.Text.Trim());
 
                 }
@@ -78,14 +78,73 @@ namespace Applicatiom_1
                 }
 
                 txtOneCommand.Text = string.Empty;
-                Refresh(); // Will implement Refresh
+                Refresh(); 
                 txtOneCommand.Focus();
                 Shape_Values.isFill = false;
 
             }
         }
 
+        public override void Refresh()
+        {
+            picDrawer1.Image = Shape_Values.newPicture;
+        }
 
+        private void btnExecute_Click (object sender, EventArgs e) 
+        {
+            if (cmbFill.SelectedItem.ToString() != "None") 
+            {
+                Shape_Values.isFill= true;
+                foreach (KnownColor kColor in Enum.GetValues(typeof(KnownColor)))
+                {
+                    Color knownColor= Color.FromKnownColor(kColor);
+                    if (cmbFill.SelectedItem.ToString().Trim() == knownColor.Name.Trim())
+                    {
+                        Shape_Values.fillColor = new SolidBrush(knownColor);
+                        Shape_Values.penColor = knownColor;
+                        break;
+                    }
+                }
+            }
+            Boolean flage = false;
+            if(txtMultiCommand.Text.Trim() != string.Empty)
+            {
+                draw.runCommands(txtMultiCommand.Text.Trim());
+                txtMultiCommand.Focus();
+                txtMultiCommand.Text = string.Empty;
+                flage = true;
+            }
+            if (txtOneCommand.Text.Trim() != string.Empty)
+            {
+                draw.runCommands(txtOneCommand.Text.Trim());
+                txtOneCommand.Focus();
+                txtOneCommand.Text = string.Empty;
+                flage = true;
+            }
+            if (!flage)
+            {
+                draw.PrintMessage("Please give me any command !!");
+                txtOneCommand.Focus();
+            }
+            Refresh();
+            Shape_Values.isFill = false;
+        }
+
+        private void btnClear_Click(object sender, EventArgs e) 
+        {
+            Shape_Values.newPicture = new Bitmap(640, 480);
+            draw = new Shape_Control();
+            draw.CurrPoint(true);
+            Refresh();
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            Shape_Values.newPicture = new Bitmap(640, 480);
+            draw = new Shape_Control();
+            draw.CurrPoint(false);
+            Refresh();
+        }
 
     }
 }
