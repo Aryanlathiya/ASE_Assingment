@@ -47,7 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Draw_Shapes.cs" />
-    <Compile Include="Shapte_Control.cs" />
+    <Compile Include="Shape_Control.cs" />
     <Compile Include="Shape_Values.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

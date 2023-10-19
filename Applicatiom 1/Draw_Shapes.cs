@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Applicatiom_1
 {
+
     internal class Draw_Shapes
     {
 
@@ -75,7 +77,7 @@ namespace Applicatiom_1
                     pen = new Pen(Color.Black, 1);
 
                     // Set a flag to indicate that the unit test is valid.
-                    Shape_Values.IsUnitTestValid = true;
+                    Shape_Values.isUnitTestValid = true;
                 }
             }
             catch (Exception exc) 
@@ -85,7 +87,110 @@ namespace Applicatiom_1
                 PrintMessage("Error in DrawLine: " + exc.Message);
 
                 // Set a flag to indicate that the unit test is not valid.
-                Shape_Values.IsUnitTestValid= false;
+                Shape_Values.isUnitTestValid= false;
+            }
+        }
+
+
+        //Draw a circle at the current position with the specified width.
+        public void DrawCircle (int width)
+        {
+            try
+            {
+                // Calculate the coordinates of the top-left corner of the circle's bounding rectangle. 
+                int xpos = x - (width / 2);
+                int ypos = y - (width / 2);
+                
+                // Create a rectangle that defines the circle's bounding box.
+                currShape = new Rectangle(xpos, ypos, width, width);
+
+                // Check if the circle shoud be filled.
+                if (Shape_Values.isFill)
+                {
+
+                    // Fill the circle with the spcified fill color.
+                    this.graphics.FillEllipse(Shape_Values.fillColor, currShape);
+
+                    // Draw the outline of the circle using the current pen.
+                    this.graphics.DrawEllipse(pen, xpos, ypos, width, width);
+
+                    // Set the flag to indicate a successfull drawing operation.
+                    Shape_Values.isUnitTestValid = true;
+                }
+            }
+            catch (Exception exc)
+            {
+                PrintMessage ("Error in DrawCircle" +exc.Message);
+                
+                // Set the flag to indicate an unsuccessful drawing operation.
+                Shape_Values.isUnitTestValid = false;
+            }
+
+        }
+
+
+        public void DrawSquare(int width)
+        {
+            try
+            {
+                int xpos = x - (width / 2);
+                int ypos = y - (width / 2);
+                currShape = new Rectangle(xpos, ypos, width, width);
+                if (Shape_Values.isFill) 
+                {
+                    this.graphics.FillRectangle(Shape_Values.fillColor, currShape);
+                    this.graphics.DrawRectangle(pen, currShape);
+                    Shape_Values.isUnitTestValid = true;
+                }
+            }
+            catch ( Exception exc) 
+            {
+                PrintMessage("Error in DrawSquare" + exc.Message);
+                Shape_Values.isUnitTestValid = false;
+            }
+        }
+
+
+        public void DrawRectangle(int  width, int height)
+        {
+            try
+            {
+                int xpos = x - (width / 2);
+                int ypos = y - (height / 2);
+                currShape = new Rectangle(xpos, ypos, width, height);
+                if (Shape_Values.isFill)
+                {
+                    this.graphics.FillRectangle(Shape_Values.fillColor, currShape);
+                    this.graphics.DrawRectangle(pen, currShape);
+                    Shape_Values.isUnitTestValid = true;
+                }
+            }
+            catch (Exception exc) 
+            {
+                PrintMessage("Error in DrawRectangle" + exc.Message);
+                Shape_Values.isUnitTestValid = false;
+            }
+        }
+
+        public void MovePointer(int xpos, int ypos)
+        {
+            try
+            {
+                pen = new Pen(SystemColors.ActiveBorder, 2);
+                this.graphics.DrawRectangle(pen, currPos);
+                pen = new Pen(Color.Red, 2);
+                currPos = GetRectangle (xpos, ypos, 2, 2);
+                this.graphics.DrawRectangle (pen, currPos);
+                x = Shape_Values.x = xpos;
+                y = Shape_Values.y = ypos;
+                pen = new Pen(Color.Black, 2);
+                Shape_Values.isUnitTestValid = true;
+
+            }
+            catch (Exception exc ) 
+            {
+                PrintMessage("Error in MovePointer" + exc.Message);
+                Shape_Values.isUnitTestValid = false;
             }
         }
         

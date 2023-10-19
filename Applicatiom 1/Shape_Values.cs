@@ -30,7 +30,7 @@ namespace Applicatiom_1
 
 
         // Property to access and modify the unit test validity status.
-        public static Boolean IsUnitTestValid
+        public static Boolean isUnitTestValid
         {
             get { return _isUnitTestValid; }
             set { _isUnitTestValid = value; }

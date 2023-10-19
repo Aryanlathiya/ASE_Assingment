@@ -73,6 +73,7 @@
             resources.ApplyResources(this.picDrawer1, "picDrawer1");
             this.picDrawer1.Name = "picDrawer1";
             this.picDrawer1.TabStop = false;
+            this.picDrawer1.Click += new System.EventHandler(this.picDrawer1_Click);
             // 
             // btnReset
             // 
@@ -86,6 +87,7 @@
             this.txtMultiCommand.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             resources.ApplyResources(this.txtMultiCommand, "txtMultiCommand");
             this.txtMultiCommand.Name = "txtMultiCommand";
+            this.txtMultiCommand.TextChanged += new System.EventHandler(this.txtMultiCommand_TextChanged);
             // 
             // txtOneCommand
             // 

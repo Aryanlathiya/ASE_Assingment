@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Applicatiom_1
 {
-    internal class Shapte_Control
+    internal class Shape_Control
     {
     }
 }

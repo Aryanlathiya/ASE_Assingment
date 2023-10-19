@@ -12,10 +12,16 @@ namespace Applicatiom_1
 {
     public partial class Form : System.Windows.Forms.Form
     {
+        Shape_Control draw;
 
         public Form()
         {
             InitializeComponent();
+            Shape_Values.x = Shape_Values.y = 0;
+            draw = new Shape_Control();
+            draw.
+
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -23,6 +29,14 @@ namespace Applicatiom_1
 
         }
 
-        
+        private void txtMultiCommand_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void picDrawer1_Paint(object sender, EventArgs e)
+        {
+            Graphics g = e.Graphics;
+        }
     }
 }
