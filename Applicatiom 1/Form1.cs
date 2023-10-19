@@ -19,8 +19,16 @@ namespace Applicatiom_1
             InitializeComponent();
             Shape_Values.x = Shape_Values.y = 0;
             draw = new Shape_Control();
-            draw.
-
+            draw.CurrPoint(false);
+            Refresh();
+            cmbFill.Items.Add("None");
+            foreach (KnownColor kColor in Enum.GetValues(typeof(KnownColor))) 
+            {
+                Color knownColor = Color.FromKnownColor(kColor);
+                cmbFill.Items.Add(knownColor.Name);
+                cmbFill.SelectedIndex = 0;
+                txtOneCommand.Focus();
+            }
 
         }
 
@@ -34,9 +42,50 @@ namespace Applicatiom_1
 
         }
 
-        private void picDrawer1_Paint(object sender, EventArgs e)
+        private void picDrawer1_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
+            g.DrawImageUnscaled(Shape_Values.newPicture, 0, 0);
         }
+
+        private void txtOneCommand_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) 
+            {
+                if(cmbFill.SelectedIndex.ToString() != "None")
+                {
+                    Shape_Values.isFill = true;
+                    foreach (KnownColor kColor in Enum.GetValues(typeof(KnownColor)))
+                    {
+                        Color knownColor = Color.FromKnownColor(kColor);
+                        if (cmbFill.SelectedIndex.ToString().Trim() == knownColor.Name.Trim())
+                        {
+                            Shape_Values.fillColor = new SolidBrush(knownColor);
+                            Shape_Values.penColor = knownColor;
+                            break;
+                        }
+                    }
+                }
+                if(txtOneCommand.Text.Trim() != string.Empty) 
+                {
+                    // Will implement runCommands 
+                    draw.runCommands(txtOneCommand.Text.Trim());
+
+                }
+                else
+                {
+                    draw.PrintMessage("Please give me a command !!");
+                }
+
+                txtOneCommand.Text = string.Empty;
+                Refresh(); // Will implement Refresh
+                txtOneCommand.Focus();
+                Shape_Values.isFill = false;
+
+            }
+        }
+
+
+
     }
 }

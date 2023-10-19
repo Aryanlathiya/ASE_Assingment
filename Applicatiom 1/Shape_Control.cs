@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Applicatiom_1
 {
-    internal class Shape_Control
+    internal class Shape_Control : Draw_Shapes
     {
+
     }
 }

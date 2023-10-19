@@ -193,6 +193,84 @@ namespace Applicatiom_1
                 Shape_Values.isUnitTestValid = false;
             }
         }
+
+        public void DrawTriangle(int xpos, int ypos, int zpos)
+        {
+            try
+            {
+                int xTri, yTri, xc, yc;
+                xc = Convert.ToInt32(x - (xpos / 3));
+                yc = Convert.ToInt32(y - (ypos / 3));
+                xTri = Convert.ToInt32(xc + xpos);
+                yTri = Convert.ToInt32(yc + ypos);
+
+                Point[] points = new Point[3];
+                points[0] = new Point(xc, yc);
+                points[1] = new Point(xTri, yc);
+                points[2] = new Point(xc, yTri);
+                if (Shape_Values.isFill)
+                {
+                    this.graphics.FillPolygon(Shape_Values.fillColor, points);
+                    this.graphics.DrawPolygon(pen, points);
+                    Shape_Values.isUnitTestValid = true;
+                }
+
+            }
+            catch (Exception exc) 
+            {
+                PrintMessage("Error in DrawTriangle" + exc.Message);
+                Shape_Values.isUnitTestValid = false;
+            }
+        }
+
+
+        public void CurrPoint (Boolean flag)
+        {
+            pen = new Pen(Color.Red, 2);
+            if (flag) 
+            {
+                currPos = GetRectangle(Shape_Values.x, Shape_Values.y, 2, 2);
+                this.graphics.DrawRectangle(pen, currPos);
+            }
+            else 
+            {
+                x = y = 0;
+                Shape_Values.x = Shape_Values.y = 0;
+                currPos = GetRectangle (x , y, 2, 2);
+                this.graphics.DrawRectangle (pen, currPos);
+            }
+            pen = new Pen(Color.Black, 1);
+        }
+
+
+        private Rectangle GetRectangle(int recx, int recy, int recwidth, int recheight)
+        {
+            return new Rectangle(recx, recy, recheight, recwidth);
+        }
+
+
+        //  ==>
+
+        public void DrawOval(int width, int height)
+        {
+            try
+            {
+                int xpos = x - (width / 2);
+                int ypos = y - (height / 2);
+                currShape = new Rectangle(xpos, ypos, width, height);
+                if (Shape_Values.isFill) 
+                {
+                    this.graphics.FillEllipse(Shape_Values.fillColor, currShape);
+                    this.graphics.DrawEllipse(pen, currShape);
+                    Shape_Values.isUnitTestValid = true;
+                }
+            }
+            catch (Exception exc) 
+            {
+                PrintMessage("Error in DrawOval" + exc.Message);
+                Shape_Values.isUnitTestValid = false;
+            }
+        }
         
     }
 }

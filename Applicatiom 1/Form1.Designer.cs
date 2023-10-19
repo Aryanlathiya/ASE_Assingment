@@ -1,4 +1,6 @@
-﻿namespace Applicatiom_1
+﻿using System;
+
+namespace Applicatiom_1
 {
     partial class Form
     {
@@ -43,12 +45,15 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
+            this.cmbFill = new System.Windows.Forms.ComboBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.picDrawer1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnExecute
@@ -73,7 +78,6 @@
             resources.ApplyResources(this.picDrawer1, "picDrawer1");
             this.picDrawer1.Name = "picDrawer1";
             this.picDrawer1.TabStop = false;
-            this.picDrawer1.Click += new System.EventHandler(this.picDrawer1_Click);
             // 
             // btnReset
             // 
@@ -141,10 +145,24 @@
             this.fileSystemWatcher1.EnableRaisingEvents = true;
             this.fileSystemWatcher1.SynchronizingObject = this;
             // 
+            // cmbFill
+            // 
+            this.cmbFill.FormattingEnabled = true;
+            resources.ApplyResources(this.cmbFill, "cmbFill");
+            this.cmbFill.Name = "cmbFill";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.cmbFill);
+            resources.ApplyResources(this.groupBox5, "groupBox5");
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.TabStop = false;
+            // 
             // Form
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -160,6 +178,7 @@
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
+            this.groupBox5.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,6 +199,10 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.IO.FileSystemWatcher fileSystemWatcher1;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.ComboBox cmbFill;
+
+        public EventHandler picDrawer1_Click { get; private set; }
     }
 }
 
