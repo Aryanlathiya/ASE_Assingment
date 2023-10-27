@@ -61,14 +61,16 @@ namespace Applicatiom_1
             this.btnExecute.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             resources.ApplyResources(this.btnExecute, "btnExecute");
             this.btnExecute.Name = "btnExecute";
-            this.btnExecute.UseVisualStyleBackColor = false;
+            this.btnExecute.UseVisualStyleBackColor = true;
+            this.btnExecute.Click += new System.EventHandler(this.btnExecute_Click);
             // 
             // btnClear
             // 
             this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             resources.ApplyResources(this.btnClear, "btnClear");
             this.btnClear.Name = "btnClear";
-            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // picDrawer1
             // 
@@ -78,13 +80,15 @@ namespace Applicatiom_1
             resources.ApplyResources(this.picDrawer1, "picDrawer1");
             this.picDrawer1.Name = "picDrawer1";
             this.picDrawer1.TabStop = false;
+            this.picDrawer1.Paint += new System.Windows.Forms.PaintEventHandler(this.picDrawer1_Paint);
             // 
             // btnReset
             // 
             this.btnReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             resources.ApplyResources(this.btnReset, "btnReset");
             this.btnReset.Name = "btnReset";
-            this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // txtMultiCommand
             // 
@@ -97,6 +101,7 @@ namespace Applicatiom_1
             // 
             resources.ApplyResources(this.txtOneCommand, "txtOneCommand");
             this.txtOneCommand.Name = "txtOneCommand";
+            this.txtOneCommand.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtOneCommand_KeyDown);
             // 
             // notifyIcon1
             // 
@@ -150,6 +155,7 @@ namespace Applicatiom_1
             this.cmbFill.FormattingEnabled = true;
             resources.ApplyResources(this.cmbFill, "cmbFill");
             this.cmbFill.Name = "cmbFill";
+            this.cmbFill.TabIndex = 10;
             // 
             // groupBox5
             // 
@@ -202,7 +208,7 @@ namespace Applicatiom_1
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.ComboBox cmbFill;
 
-        public EventHandler picDrawer1_Click { get; private set; }
+        
     }
 }
 

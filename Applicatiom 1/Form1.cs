@@ -52,13 +52,13 @@ namespace Applicatiom_1
         {
             if (e.KeyCode == Keys.Enter) 
             {
-                if(cmbFill.SelectedIndex.ToString() != "None")
+                if(cmbFill.SelectedItem.ToString() != "None")
                 {
                     Shape_Values.isFill = true;
                     foreach (KnownColor kColor in Enum.GetValues(typeof(KnownColor)))
                     {
                         Color knownColor = Color.FromKnownColor(kColor);
-                        if (cmbFill.SelectedIndex.ToString().Trim() == knownColor.Name.Trim())
+                        if (cmbFill.SelectedItem.ToString().Trim() == knownColor.Name.Trim())
                         {
                             Shape_Values.fillColor = new SolidBrush(knownColor);
                             Shape_Values.penColor = knownColor;
