@@ -47,6 +47,7 @@ namespace Applicatiom_1
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.cmbFill = new System.Windows.Forms.ComboBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.btnSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picDrawer1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -76,6 +77,7 @@ namespace Applicatiom_1
             // 
             this.picDrawer1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.picDrawer1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            //this.picDrawer1.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.picDrawer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.picDrawer1, "picDrawer1");
             this.picDrawer1.Name = "picDrawer1";
@@ -155,7 +157,6 @@ namespace Applicatiom_1
             this.cmbFill.FormattingEnabled = true;
             resources.ApplyResources(this.cmbFill, "cmbFill");
             this.cmbFill.Name = "cmbFill";
-            this.cmbFill.TabIndex = 10;
             // 
             // groupBox5
             // 
@@ -164,10 +165,18 @@ namespace Applicatiom_1
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.TabStop = false;
             // 
+            // btnSave
+            // 
+            resources.ApplyResources(this.btnSave, "btnSave");
+            this.btnSave.Name = "btnSave";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // Form
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -207,8 +216,7 @@ namespace Applicatiom_1
         private System.IO.FileSystemWatcher fileSystemWatcher1;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.ComboBox cmbFill;
-
-        
+        private System.Windows.Forms.Button btnSave;
     }
 }
 

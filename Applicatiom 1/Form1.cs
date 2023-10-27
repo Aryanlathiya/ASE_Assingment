@@ -26,9 +26,10 @@ namespace Applicatiom_1
             {
                 Color knownColor = Color.FromKnownColor(kColor);
                 cmbFill.Items.Add(knownColor.Name);
-                cmbFill.SelectedIndex = 0;
-                txtOneCommand.Focus();
+                
             }
+            cmbFill.SelectedIndex = 0;
+            txtOneCommand.Focus();
 
         }
 
@@ -144,6 +145,19 @@ namespace Applicatiom_1
             draw = new Shape_Control();
             draw.CurrPoint(false);
             Refresh();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "";
+            saveFileDialog.Title = "";
+            saveFileDialog.ShowDialog();
+
+            if (saveFileDialog.FileName != "" && Shape_Values.newPicture != null)
+            {
+                Shape_Values.newPicture.Save(saveFileDialog.FileName);
+            }
         }
 
     }
