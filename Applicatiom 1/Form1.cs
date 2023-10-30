@@ -68,15 +68,10 @@ namespace Applicatiom_1
                     }
                 }
                 if(txtOneCommand.Text.Trim() != string.Empty) 
-                {
-                     
                     draw.runCommands(txtOneCommand.Text.Trim());
-
-                }
                 else
-                {
                     draw.PrintMessage("Please give me a command !!");
-                }
+                
 
                 txtOneCommand.Text = string.Empty;
                 Refresh(); 
@@ -150,8 +145,8 @@ namespace Applicatiom_1
         private void btnSave_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "";
-            saveFileDialog.Title = "";
+            saveFileDialog.Filter = "JPEG|*.jpeg";
+            saveFileDialog.Title = "Assingment1";
             saveFileDialog.ShowDialog();
 
             if (saveFileDialog.FileName != "" && Shape_Values.newPicture != null)

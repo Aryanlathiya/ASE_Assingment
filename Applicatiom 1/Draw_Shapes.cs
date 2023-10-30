@@ -128,7 +128,7 @@ namespace Applicatiom_1
 
         }
 
-
+        //Draw a Square at the current position with the specified width.
         public void DrawSquare(int width)
         {
             try
@@ -150,7 +150,7 @@ namespace Applicatiom_1
             }
         }
 
-
+        //Draw a Rectangle at the current position with the specified width and height.
         public void DrawRectangle(int  width, int height)
         {
             try
@@ -172,6 +172,8 @@ namespace Applicatiom_1
             }
         }
 
+
+        //Move a Pointer at the current position with the specified xpos and ypos.
         public void MovePointer(int xpos, int ypos)
         {
             try
@@ -194,6 +196,7 @@ namespace Applicatiom_1
             }
         }
 
+        //Draw a Triangle at the current position with the specified xpos, ypos and zpos.
         public void DrawTriangle(int xpos, int ypos, int zpos)
         {
             try
@@ -223,26 +226,30 @@ namespace Applicatiom_1
             }
         }
 
-
+        //Updates the current point position and displays a rectangle on the graphics context.
         public void CurrPoint (Boolean flag)
         {
+            // Set pen properties for drawing.
             pen = new Pen(Color.Red, 2);
             if (flag) 
             {
+                // If the flag is true, draw a rectangle at the current position.
                 currPos = GetRectangle(Shape_Values.x, Shape_Values.y, 2, 2);
                 this.graphics.DrawRectangle(pen, currPos);
             }
             else 
             {
+                // If the flag is false, reset positions to (0, 0) and draw a rectangle at that position.
                 x = y = 0;
                 Shape_Values.x = Shape_Values.y = 0;
                 currPos = GetRectangle (x , y, 2, 2);
                 this.graphics.DrawRectangle (pen, currPos);
             }
+            // Reset the pen properties.
             pen = new Pen(Color.Black, 1);
         }
 
-
+        //Creates a new rectangle object based on the provided parameters.
         private Rectangle GetRectangle(int recx, int recy, int recwidth, int recheight)
         {
             return new Rectangle(recx, recy, recheight, recwidth);
@@ -251,6 +258,7 @@ namespace Applicatiom_1
 
         //  ==>
 
+        //Draw a Oval at the current position with the specified width.
         public void DrawOval(int width, int height)
         {
             try
