@@ -155,5 +155,16 @@ namespace Applicatiom_1
             }
         }
 
+        private void btnOpen_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if(openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                Bitmap bit =  new Bitmap (openFileDialog.FileName);
+                picDrawer1.Image = bit;
+                picDrawer1.SizeMode = PictureBoxSizeMode.Normal;
+            }
+        }
+
     }
 }

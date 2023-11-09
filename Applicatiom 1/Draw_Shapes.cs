@@ -33,6 +33,11 @@ namespace Applicatiom_1
             y = Shape_Values.y;
         }
 
+
+        /// <summary>
+        /// Print a message on the graphics context.
+        /// </summary>
+        /// <param name="msg">The message to be displayed.</param>
         // Print a message on the graphics context
         // The message to be displayed.
         public void PrintMessage (string msg)
@@ -55,6 +60,12 @@ namespace Applicatiom_1
         }
 
 
+
+        /// <summary>
+        /// Draw a line on the graphics context from the current position to the specified position.
+        /// </summary>
+        /// <param name="xpos">The X-coordinate of the ending point of the line.</param>
+        /// <param name="ypos">The Y-coordinate of the ending point of the line.</param>
         // Draw a line on the graphics context from the current position to the specified position.
         public void DrawLine(int xpos, int ypos)
         {
@@ -92,6 +103,11 @@ namespace Applicatiom_1
         }
 
 
+
+        /// <summary>
+        /// Draw a circle at the current position with the specified width.
+        /// </summary>
+        /// <param name="width">The width (and height) of the circle.</param>
         //Draw a circle at the current position with the specified width.
         public void DrawCircle (int width)
         {
@@ -196,6 +212,18 @@ namespace Applicatiom_1
             }
         }
 
+
+        /// <summary>
+        /// Draws a triangle on the graphics context.
+        /// </summary>
+        /// <param name="xpos">The x-coordinate of the triangle point.</param>
+        /// <param name="ypos">The y-coordinate of the triangle point.</param>
+        /// <param name="zpos">The z-coordinate of the triangle point.</param>
+        /// <remarks>
+        /// The method calculates the positions for the triangle points and creates an array of points to represent the triangle. If the shape is set to be filled, it fills the triangle with the specified fill color and then draws the outline using the current pen. 
+        /// Upon successful drawing, sets the 'isUnitTestValid' flag to true. If an error occurs during the drawing operation, sets the flag to false.
+        /// </remarks>
+        /// <exception cref="Exception">Thrown when an error occurs during the drawing operation.</exception>
         //Draw a Triangle at the current position with the specified xpos, ypos and zpos.
         public void DrawTriangle(int xpos, int ypos, int zpos)
         {

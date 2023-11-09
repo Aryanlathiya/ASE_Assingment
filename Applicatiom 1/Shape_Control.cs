@@ -8,6 +8,13 @@ namespace Applicatiom_1
 {
     public class Shape_Control : Draw_Shapes
     {
+
+        /// <summary>
+        /// Checks if the input string is a valid number and attempts to parse it to an integer.
+        /// </summary>
+        /// <param name="no">The input string to check and parse.</param>
+        /// <param name="val">Output parameter that contains the parsed integer if successful.</param>
+        /// <returns>Boolean value indicating if the input is a valid number.</returns>
         private Boolean checkNumber(string no, ref int val)
         {
             Boolean isNumber = false;

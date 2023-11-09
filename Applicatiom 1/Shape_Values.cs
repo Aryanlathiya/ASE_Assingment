@@ -21,6 +21,9 @@ namespace Applicatiom_1
 
 
 
+        /// <summary>
+        /// Provides access to the color of the pen used for drawing.
+        /// </summary>
         // Property to access and modify the pen color used for drawing shapes.
         public static Color penColor
         {
@@ -29,6 +32,9 @@ namespace Applicatiom_1
         }
 
 
+        /// <summary>
+        /// Provides access to the unit test validity status.
+        /// </summary>
         // Property to access and modify the unit test validity status.
         public static Boolean isUnitTestValid
         {
@@ -38,6 +44,9 @@ namespace Applicatiom_1
         }
 
 
+        /// <summary>
+        /// Provides access to the fill status for shapes.
+        /// </summary>
         // Property to access and modify the fill status for shapes.
         public static Boolean isFill
         {
@@ -49,6 +58,9 @@ namespace Applicatiom_1
         }
 
 
+        /// <summary>
+        /// Provides access to the fill color for filled shapes.
+        /// </summary>
         // Property to access and modify the fill color for filled shapes.
         public static SolidBrush fillColor
         {
@@ -60,6 +72,9 @@ namespace Applicatiom_1
         }
 
 
+        /// <summary>
+        /// Provides access to the bitmap used for drawing shapes.
+        /// </summary>
         // Property to access and modify the bitmap used for drawing shapes.
         public static Bitmap newPicture
         {
@@ -70,7 +85,9 @@ namespace Applicatiom_1
             set { _newPicture = value; }
         }
 
-
+        /// <summary>
+        /// Provides access to the X coordinate for positioning shapes.
+        /// </summary>
         // Property to access and modify the X coordinate for positioning shapes.
         public static int x
         {
@@ -82,6 +99,9 @@ namespace Applicatiom_1
         }
 
 
+        /// <summary>
+        /// Provides access to the Y coordinate for positioning shapes.
+        /// </summary>
         // Property to access and modify the Y coordinate for  positioning shapes.
         public static int y
         {
