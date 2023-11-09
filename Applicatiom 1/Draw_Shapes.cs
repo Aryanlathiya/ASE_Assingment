@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Applicatiom_1
 {
 
-    internal class Draw_Shapes
+    public class Draw_Shapes
     {
 
         // Variables Declaration

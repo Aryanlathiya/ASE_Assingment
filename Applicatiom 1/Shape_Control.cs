@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Applicatiom_1
 {
-    internal class Shape_Control : Draw_Shapes
+    public class Shape_Control : Draw_Shapes
     {
         private Boolean checkNumber(string no, ref int val)
         {
