@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -106,6 +107,36 @@ namespace Applicatiom_1
                                 j = j + 2;
                             }
                         }
+
+                        else if (oneCmd[j].ToString().Trim().Equals("pen"))
+                        {
+                            if (oneCmd.Count() != 2)
+                            {
+                                errorMsg = errorMsg + "invalid number of parameters for circle " + (i + 1).ToString() + "\n";
+                                runFlg = false;
+                                break;
+                            }
+                            else
+                            {
+                                string val = oneCmd[j + 1].Trim();
+                                if (val.Equals("red"))
+                                {
+                                    Shape_Values.fillColor = new SolidBrush(Color.Red);
+                                    Shape_Values.penColor = Color.Red;
+                                }
+                                else if (val.Equals("green"))
+                                {
+                                    Shape_Values.fillColor = new SolidBrush(Color.Green);
+                                    Shape_Values.penColor = Color.Green;
+                                }
+                                else if (val.Equals("blue"))
+                                {
+                                    Shape_Values.fillColor = new SolidBrush(Color.Blue);
+                                    Shape_Values.penColor = Color.Blue;
+                                }
+                                j = j + 1;
+                            }
+                        }
                         else if (oneCmd[j].ToString().Trim().Equals("drawcircle"))
                         {
                             if (oneCmd.Count() != 2 ) 
@@ -131,6 +162,7 @@ namespace Applicatiom_1
                                 j = j + 1;
                             }
                         }
+                        
                         else if (oneCmd[j].ToString().Trim().Equals("drawsquare"))
                         {
                             if (oneCmd.Count() != 2 )
