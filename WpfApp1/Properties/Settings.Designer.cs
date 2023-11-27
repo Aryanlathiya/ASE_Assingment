@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ASE_Assingment_WpfApp1_Part2.Properties
+namespace WpfApp1.Properties
 {
 
 

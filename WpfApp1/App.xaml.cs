@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace ASE_Assingment_WpfApp1_Part2
+namespace WpfApp1
 {
     /// <summary>
     /// Interaction logic for App.xaml
