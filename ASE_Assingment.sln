@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASE_Assingment_Unittest", "ASE_Assingment_Unittest\ASE_Assingment_Unittest.csproj", "{C59A8015-34AA-47FA-9113-F67753EAD5B0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASE_Assingment_WpfApp1_Part2", "ASE_Assingment_WpfApp1_Part2\ASE_Assingment_WpfApp1_Part2.csproj", "{F616659F-9A36-4746-AABF-F59B23F8B670}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{C59A8015-34AA-47FA-9113-F67753EAD5B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C59A8015-34AA-47FA-9113-F67753EAD5B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C59A8015-34AA-47FA-9113-F67753EAD5B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F616659F-9A36-4746-AABF-F59B23F8B670}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F616659F-9A36-4746-AABF-F59B23F8B670}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F616659F-9A36-4746-AABF-F59B23F8B670}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F616659F-9A36-4746-AABF-F59B23F8B670}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
