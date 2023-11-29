@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASE_Assingment_Unittest", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp1", "WpfApp1\WpfApp1.csproj", "{252627B8-E19A-40BC-8202-5FBD6028C093}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application_2", "Application_2\Application_2.csproj", "{8EF6C0C1-0660-4BD6-8F81-514E1BC2B986}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{252627B8-E19A-40BC-8202-5FBD6028C093}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{252627B8-E19A-40BC-8202-5FBD6028C093}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{252627B8-E19A-40BC-8202-5FBD6028C093}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EF6C0C1-0660-4BD6-8F81-514E1BC2B986}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EF6C0C1-0660-4BD6-8F81-514E1BC2B986}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EF6C0C1-0660-4BD6-8F81-514E1BC2B986}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EF6C0C1-0660-4BD6-8F81-514E1BC2B986}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
