@@ -55,6 +55,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="shapeRectangleFactory.cs" />
+    <Compile Include="shapeRectangle.cs" />
     <Compile Include="Shape.cs" />
     <Compile Include="shapeFactory.cs" />
     <Page Include="MainWindow.xaml">
