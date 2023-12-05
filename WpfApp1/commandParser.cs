@@ -400,6 +400,242 @@ namespace WpfApp1
         }
 
 
+        public void drawCircle(string[] commands)
+        {
+            int m = Int32.Parse(commands[1]);
+            drawCircle(m);
+        }
+
+        public bool checkcircle(String command)
+        {
+            string[] commands = command.Split(' ');
+            if (commands[0].Contains("circle") && (commands.Length == 2))
+            {
+                bool firstArg = false;
+                try
+                {
+                    int m = Int32.Parse(commands[1]);
+                    firstArg = true;
+                }
+                catch (FormatException e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+
+                if (firstArg)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            }
+            else
+            {
+
+                return false;
+            }
+        }
+
+
+
+        public void drawTriangle(string[] commands)
+        {
+            int x2 = Int32.Parse(commands[1]);
+            int y2 = Int32.Parse(commands[2]);
+            int x3 = Int32.Parse(commands[3]);
+            int y3 = Int32.Parse(commands[4]);
+            drawTriangle(x2, y2, x3, y3);
+        }
+
+        public bool checktriangle(String command)
+        {
+            string[] commands = command.Split(' ');
+            if (commands[0].Contains("triangle") && (commands.Length == 5))
+            {
+                bool firstArg = false;
+                bool secondArg = false;
+                bool thirdArg = false;
+                bool fourthArg = false;
+
+                try
+                {
+                    int m = Int32.Parse(commands[1]);
+                    firstArg = true;
+                }
+                catch (FormatException e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+                try
+                {
+                    int m = Int32.Parse(commands[2]);
+                    secondArg = true;
+                }
+                catch (FormatException e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+                try
+                {
+                    int m = Int32.Parse(commands[3]);
+                    thirdArg = true;
+                }
+                catch (FormatException e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+                try
+                {
+                    int m = Int32.Parse(commands[4]);
+                    fourthArg = true;
+                }
+                catch (FormatException e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+                if (firstArg && secondArg && thirdArg && fourthArg)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            }
+            else
+            {
+
+                return false;
+            }
+        }
+
+        public void drawPen(string[] commands)
+        {
+            if (commands[1] == "red")
+            {
+                this.penColor = Colors.Red;
+            }
+            else if (commands[1] == "blue")
+            {
+                this.penColor = Colors.Blue;
+            }
+            else if (commands[1] == "green")
+            {
+                this.penColor = Colors.Green;
+            }
+            else
+            {
+                this.penColor = Colors.Black;
+            }
+        }
+
+        public bool checkpen(String command)
+        {
+
+            string[] commands = command.Split(' ');
+            if (commands[0].Contains("pen") && (commands.Length == 2))
+            {
+                bool firstArg = false;
+                try
+                {
+                    if (commands[1] == "red" || commands[1] == "blue" || commands[1] == "green")
+                    {
+                        firstArg = true;
+                    }
+                }
+                catch (FormatException e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+
+                if (firstArg)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            }
+            else
+            {
+
+                return false;
+            }
+        }
+
+        public void drawFill(string[] commands)
+        {
+            if (commands[1] == "on")
+            { this.fill = true; }
+            else if (commands[1] == "off")
+            { this.fill = false; }
+            else { this.fill = false; }
+
+        }
+
+        public bool checkfill(String command)
+        {
+            string[] commands = command.Split(' ');
+            if (commands[0].Contains("fill") && (commands.Length == 2))
+            {
+                bool firstArg = false;
+                try
+                {
+                    if (commands[1] == "on" || commands[1] == "off")
+                    {
+                        firstArg = true;
+                    }
+                }
+                catch (FormatException e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+
+                if (firstArg)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public void drawClear()
+        {
+            foreach (Window window in Application.Current.Windows)
+            {
+                if (window.GetType() == typeof(MainWindow))
+                {
+                    (window as MainWindow).myCanvas.Children.Clear();
+                }
+            }
+        }
+
+        public bool checkclear(String command)
+        {
+            string[] commands = command.Split(' ');
+            if (commands[0].Contains("clear") && (commands.Length == 1))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
 
         public void executeCommand()
