@@ -5,24 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="720" Width="700">
+        Title="MainWindow" Height="820" Width="860">
     <Grid Background="#FFF0F0F0">
-        <Rectangle Height="375" HorizontalAlignment="Left" Margin="4,2,0,0" x:Name="rectangle3" Stroke="Black" VerticalAlignment="Top" Width="400" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="154*"/>
+            <RowDefinition Height="47*"/>
+        </Grid.RowDefinitions>
+        <Rectangle Height="522" HorizontalAlignment="Left" Margin="4,2,0,0" x:Name="rectangle3" Stroke="Black" VerticalAlignment="Top" Width="556" />
         <Label Content="Drawing Canvas" Height="30" HorizontalAlignment="Left" Margin="10,10,0,0" x:Name="lblDrawingCanvas" VerticalAlignment="Top" Width="150" />
-        <Canvas Height="300" HorizontalAlignment="Left" Margin="17,53,0,0" x:Name="myCanvas" VerticalAlignment="Top" Width="380" Background="#FFFFC080"/>
-        <Rectangle Height="375" HorizontalAlignment="Left" Margin="407,2,0,0" x:Name="rectangle1" Stroke="Black" VerticalAlignment="Top" Width="271" />
-        <Label Content="Program Window" Height="30" HorizontalAlignment="Left" Margin="417,8,0,0" x:Name="lblProgramWindow" VerticalAlignment="Top" Width="150" />
-        <TextBox Height="301" HorizontalAlignment="Left" Margin="415,53,0,0" x:Name="txtProgram" VerticalAlignment="Top" Width="251" AcceptsReturn="True" Background="#FFFFE0C0" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" />
-        <Rectangle Height="56" HorizontalAlignment="Left" Margin="4,383,0,0" x:Name="rectangle2" Stroke="Black" VerticalAlignment="Top" Width="674" />
-        <Label Content="Command Terminal" Height="30" HorizontalAlignment="Left" Margin="17,392,0,0" x:Name="lblConsoleTerminal" VerticalAlignment="Top" Width="150" />
-        <Rectangle Height="220" HorizontalAlignment="Left" Margin="4,454,0,0" x:Name="rectangle4" Stroke="Black" VerticalAlignment="Top" Width="674" />
-        <Label Content="Console" Height="28" HorizontalAlignment="Left" Margin="17,463,0,0" x:Name="lblOutput" VerticalAlignment="Top" Width="93" />
-        <TextBox Height="175" HorizontalAlignment="Left" Margin="17,482,0,0" x:Name="txtOutput" VerticalAlignment="Top" Width="648" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" Background="#FFFFE0C0" />
-        <TextBox x:Name="txtCommand" HorizontalAlignment="Left" Margin="17,411,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="561" Background="White" Height="23"/>
-        <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="520,13,0,0" VerticalAlignment="Top" Width="40" Height="23" Background="#FFFFE0C0"/>
-        <Button x:Name="btnLoad" Content="Load" HorizontalAlignment="Left" Margin="572,13,0,0" VerticalAlignment="Top" RenderTransformOrigin="-4.941,0.683" Width="40" Height="23" Background="#FFFFE0C0"/>
-        <Button x:Name="btnRun" Content="Run" HorizontalAlignment="Left" Margin="625,13,0,0" VerticalAlignment="Top" Width="40" Height="23" Background="#FF80FF80"/>
-        <Button x:Name="btnExecute" Content="Execute" HorizontalAlignment="Left" Margin="590,411,0,0" VerticalAlignment="Top" Width="75" Height="23" Background="#FF80FF80"/>
+        <Canvas Height="457" HorizontalAlignment="Left" Margin="17,53,0,0" x:Name="myCanvas" VerticalAlignment="Top" Width="534" Background="#FFFFC080"/>
+        <Rectangle Height="522" HorizontalAlignment="Left" Margin="565,2,0,0" x:Name="rectangle1" Stroke="Black" VerticalAlignment="Top" Width="271" />
+        <Label Content="Program Window" Height="30" HorizontalAlignment="Left" Margin="575,8,0,0" x:Name="lblProgramWindow" VerticalAlignment="Top" Width="150" />
+        <TextBox Height="456" HorizontalAlignment="Left" Margin="573,54,0,0" x:Name="txtProgram" VerticalAlignment="Top" Width="251" AcceptsReturn="True" Background="#FFFFE0C0" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" />
+        <Rectangle Height="69" HorizontalAlignment="Left" Margin="4,531,0,0" x:Name="rectangle2" Stroke="Black" VerticalAlignment="Top" Width="832" />
+        <Label Content="Command Terminal" Height="30" HorizontalAlignment="Left" Margin="17,529,0,0" x:Name="lblConsoleTerminal" VerticalAlignment="Top" Width="150" />
+        <Rectangle Height="166" HorizontalAlignment="Left" Margin="4,0,0,0" x:Name="rectangle4" Stroke="Black" VerticalAlignment="Center" Width="832" Grid.Row="1" />
+        <Label Content="Console" Height="28" HorizontalAlignment="Left" Margin="38,25,0,0" x:Name="lblOutput" VerticalAlignment="Top" Width="94" Grid.Row="1" />
+        <TextBox Height="119" HorizontalAlignment="Center" x:Name="txtOutput" VerticalAlignment="Center" Width="780" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" Background="#FFFFE0C0" Grid.Row="1" />
+        <TextBox x:Name="txtCommand" HorizontalAlignment="Left" Margin="38,557,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="562" Background="White" Height="23"/>
+        <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="678,12,0,0" VerticalAlignment="Top" Width="40" Height="22" Background="#FFFFE0C0"/>
+        <Button x:Name="btnLoad" Content="Load" HorizontalAlignment="Left" Margin="730,11,0,0" VerticalAlignment="Top" RenderTransformOrigin="-4.941,0.683" Width="40" Height="23" Background="#FFFFE0C0"/>
+        <Button x:Name="btnRun" Content="Run" HorizontalAlignment="Left" Margin="784,11,0,0" VerticalAlignment="Top" Width="40" Height="23" Background="#FF80FF80"/>
+        <Button x:Name="btnExecute" Content="Execute" HorizontalAlignment="Left" Margin="644,548,0,0" VerticalAlignment="Top" Width="74" Height="23" Background="#FF80FF80"/>
 
     </Grid>
 </Window>

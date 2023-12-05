@@ -46,6 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="drawCircle.cs" />
+    <Compile Include="drawTriangle.cs" />
+    <Compile Include="drawRectangle.cs" />
+    <Compile Include="drawSquare.cs" />
+    <Compile Include="shapeFactory.cs" />
     <Compile Include="ShapeInterface.cs" />
     <Compile Include="Shape.cs" />
     <Compile Include="Form1.cs">
