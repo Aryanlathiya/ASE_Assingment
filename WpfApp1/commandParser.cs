@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
+using System.Windows;
 using System.Windows.Media;
+using System.Windows.Shapes;
 
 namespace WpfApp1
 {
@@ -34,18 +37,35 @@ namespace WpfApp1
 
         public bool CheckCommand(String command)
         {
-            if(commandIsValid(command) == true && commandHasValidArgs(command == true)
+            if(commandIsValid(command) == true && commandHasValidArgs(command) == true)
             {
                 return true;
             }
             else if (commandIsValid(command) == true && commandHasValidArgs(command) == false)
             {
-                invalidCommand(invalidArgu, 10.00, 30.00);
+                inValidCommand(invalidArgu, 10.00, 30.00);
                 return false;
             }
             else
             {
                 return false;
+            }
+        }
+
+        public void inValidCommand(String text, double x, double y)
+        {
+            TextBlock textBlock = new TextBlock();
+            textBlock.Text = text;
+            textBlock.Foreground = new SolidColorBrush(Colors.Red);
+            Canvas.SetLeft(textBlock, x);
+            Canvas.SetTop(textBlock, y);
+            foreach (Window window in Application.Current.Windows)
+            {
+                if (window.GetType() == typeof(MainWindow))
+                {
+                    (window as MainWindow).myCanvas.Children.Add(textBlock);
+                    (window as MainWindow).txtOutput.Text = (window as MainWindow).txtOutput.Text + "\n" + "Invalid";
+                }
             }
         }
 
@@ -65,7 +85,7 @@ namespace WpfApp1
             }
             else
             {
-                inValidCommand(invalidcommand, 10.00, 10.00);
+                inValidCommand(invalidCommand, 10.00, 10.00);
                 return false;
             }
         }
@@ -116,6 +136,271 @@ namespace WpfApp1
             }
 
         }
+
+        public void drawRectangle(int width, int height)
+        {
+            shapeFactory factory = null;
+            factory = new shapeRectangleFactory(this.penLocationX, this.penLocationY, this.penColor, this.fill, width, height, this.penColor);
+            shapeRectangle rectangleShape = (shapeRectangle)factory.GetShape();
+            Rectangle rect;//This is a graphics object. Its parameters will be set from the Rectangle Factory Object
+            rect = new Rectangle();
+            rect.Stroke = new SolidColorBrush(rectangleShape.penColor);
+            if (rectangleShape.fill)
+            {
+                rect.Fill = new SolidColorBrush(rectangleShape.penColor);
+            }
+            rect.Width = rectangleShape.width;
+            rect.Height = rectangleShape.height;
+            Canvas.SetLeft(rect, rectangleShape.penLocationX);
+            Canvas.SetTop(rect, rectangleShape.penLocationY);
+            foreach (Window window in Application.Current.Windows)
+            {
+                if (window.GetType() == typeof(MainWindow))
+                {
+                    (window as MainWindow).myCanvas.Children.Add(rect);
+                    (window as MainWindow).txtOutput.Text = (window as MainWindow).txtOutput.Text + "\n" + "Rectangle Draw";
+                }
+            }
+        }
+
+        public void drawCircle(int radius)
+        {
+            Ellipse ellp;
+            ellp = new Ellipse();
+            ellp.Stroke = new SolidColorBrush(this.penColor);
+            if (this.fill)
+            {
+                ellp.Fill = new SolidColorBrush(this.penColor);
+            }
+            ellp.Width = radius * 2;
+            ellp.Height = radius * 2;
+            ellp.SetValue(Canvas.LeftProperty, (double)this.penLocationX);
+            ellp.SetValue(Canvas.TopProperty, (double)this.penLocationY);
+            foreach (Window window in Application.Current.Windows)
+            {
+                if (window.GetType() == typeof(MainWindow))
+                {
+                    (window as MainWindow).myCanvas.Children.Add(ellp);
+                }
+            }
+        }
+
+        public void drawTriangle(int x2, int y2, int x3, int y3)
+        {
+            Line l1, l2, l3;
+            l1 = new Line();
+            l1.Stroke = new SolidColorBrush(this.penColor);
+            l1.StrokeThickness = 2;
+            l1.X1 = this.penLocationX;
+            l1.X2 = x2;
+            l1.Y1 = this.penLocationY;
+            l1.Y2 = y2;
+
+            l2 = new Line();
+            l2.Stroke = new SolidColorBrush(this.penColor);
+            l2.StrokeThickness = 2;
+            l2.X1 = x2;
+            l2.X2 = x3;
+            l2.Y1 = y2;
+            l2.Y2 = y3;
+
+            l3 = new Line();
+            l3.Stroke = new SolidColorBrush(this.penColor);
+            l3.StrokeThickness = 2;
+            l3.X1 = this.penLocationX;
+            l3.X2 = x3;
+            l3.Y1 = this.penLocationY;
+            l3.Y2 = y3;
+
+            foreach (Window window in Application.Current.Windows)
+            {
+                if (window.GetType() == typeof(MainWindow))
+                {
+                    (window as MainWindow).myCanvas.Children.Add(l1);
+                    (window as MainWindow).myCanvas.Children.Add(l2);
+                    (window as MainWindow).myCanvas.Children.Add(l3);
+                }
+            }
+
+        }
+
+        public void drawLine(int x1, int y1)
+        {
+            Line l1;
+            l1 = new Line();
+            l1.Stroke = new SolidColorBrush(this.penColor);
+            l1.StrokeThickness = 2;
+            l1.X1 = this.penLocationX;
+            l1.X2 = x1;
+            l1.Y1 = this.penLocationY;
+            l1.Y2 = y1;
+
+            foreach (Window window in Application.Current.Windows)
+            {
+                if (window.GetType() == typeof(MainWindow))
+                {
+                    (window as MainWindow).myCanvas.Children.Add(l1); ;
+                }
+            }
+        }
+
+        public void drawMoveTo(string[] commands)
+        {
+            int x1 = Int32.Parse(commands[1]);
+            int y1 = Int32.Parse(commands[2]);
+            this.penLocationX = x1;
+            this.penLocationY = y1;
+
+        }
+
+
+        public bool checkmoveto(String command)
+        {
+            string[] commands = command.Split(' ');
+            if (commands[0].Contains("moveto") && (commands.Length == 3))
+            {
+                bool firstArg = false;
+                bool secondArg = false;
+                try
+                {
+                    int m = Int32.Parse(commands[1]);
+                    firstArg = true;
+                }
+                catch (FormatException e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+                try
+                {
+                    int m = Int32.Parse(commands[2]);
+                    secondArg = true;
+                }
+                catch (FormatException e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+                if (firstArg && secondArg)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            }
+            else
+            {
+                ;
+                return false;
+            }
+        }
+
+        public void drawDrawTo(string[] commands)
+        {
+            int x2 = Int32.Parse(commands[1]);
+            int y2 = Int32.Parse(commands[2]);
+            drawLine(x2, y2);
+
+        }
+
+        public bool checkdrawto(String command)
+        {
+            string[] commands = command.Split(' ');
+            if (commands[0].Contains("drawto") && (commands.Length == 3))
+            {
+                bool firstArg = false;
+                bool secondArg = false;
+                try
+                {
+                    int m = Int32.Parse(commands[1]);
+                    firstArg = true;
+                }
+                catch (FormatException e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+                try
+                {
+                    int m = Int32.Parse(commands[2]);
+                    secondArg = true;
+                }
+                catch (FormatException e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+                if (firstArg && secondArg)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            }
+            else
+            {
+
+                return false;
+            }
+        }
+
+        public void drawRectangle(string[] commands)
+        {
+            int width = Int32.Parse(commands[1]);
+            int height = Int32.Parse(commands[2]);
+            drawRectangle(width, height);
+        }
+        /// <summary>
+        /// This function check the rectangle command valid or not
+        /// </summary>
+        /// <param name="command"></param>
+        /// <returns></returns>
+        public bool checkrectangle(String command)
+        {
+            string[] commands = command.Split(' ');
+            if (commands[0].Contains("rectangle") && (commands.Length == 3))
+            {
+                bool firstArg = false;//width
+                bool secondArg = false;//height
+                try
+                {
+                    int m = Int32.Parse(commands[1]);
+                    firstArg = true;
+                }
+                catch (FormatException e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+                try
+                {
+                    int m = Int32.Parse(commands[2]);
+                    secondArg = true;
+                }
+                catch (FormatException e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+                if (firstArg && secondArg)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            }
+            else
+            {
+
+                return false;
+            }
+        }
+
+
+
 
         public void executeCommand()
         {
