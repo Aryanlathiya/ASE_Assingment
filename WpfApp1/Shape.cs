@@ -12,9 +12,9 @@ namespace WpfApp1
     {
         public abstract string shapeType { get; }
 
-        public abstract string penLocationX { get; set;}
+        public abstract int penLocationX { get; set;}
 
-        public abstract string penLocationY { get; set;}
+        public abstract int penLocationY { get; set;}
 
         public abstract Color penColor { get; set;}    
 
