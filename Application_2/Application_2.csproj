@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="commandParser.cs" />
     <Compile Include="drawCircle.cs" />
     <Compile Include="drawTriangle.cs" />
     <Compile Include="drawRectangle.cs" />

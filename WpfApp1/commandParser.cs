@@ -91,7 +91,7 @@ namespace WpfApp1
         }
 
 
-        public bool commandHasValidArgs(String command)
+        public bool CommandHasValidArgs(String command)
         {
             if (command.StartsWith("moveto"))
             {
@@ -131,7 +131,7 @@ namespace WpfApp1
             }
             else
             {
-                inValidCommand(invalArg, 10.00, 30.00);
+                inValidCommand(invalidArgu, 10.00, 30.00);
                 return false;
             }
 
@@ -637,6 +637,75 @@ namespace WpfApp1
             }
         }
 
+        public void drawReset()
+        {
+            this.penLocationX = 0;
+            this.penLocationY = 0;
+            this.penColor = Colors.Black;
+
+        }
+
+
+        public bool checkreset(String command)
+        {
+            string[] commands = command.Split(' ');
+            if (commands[0].Contains("reset") && (commands.Length == 1))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool commandHasValidArgs(String command)
+        {
+            if (command.StartsWith("moveto"))
+            {
+                return checkmoveto(command);
+            }
+            else if (command.StartsWith("drawto"))
+            {
+                return checkdrawto(command);
+            }
+            else if (command.StartsWith("clear"))
+            {
+                return checkclear(command);
+            }
+            else if (command.StartsWith("reset"))
+            {
+                return checkreset(command);
+            }
+            else if (command.StartsWith("rectangle"))
+            {
+                return checkrectangle(command);
+            }
+            else if (command.StartsWith("circle"))
+            {
+                return checkcircle(command);
+            }
+            else if (command.StartsWith("triangle"))
+            {
+                return checktriangle(command);
+            }
+            else if (command.StartsWith("pen"))
+            {
+                return checkpen(command);
+            }
+            else if (command.StartsWith("fill"))
+            {
+                return checkfill(command);
+            }
+            else
+            {
+                inValidCommand(invalidArgu, 10.00, 30.00);
+                return false;
+            }
+
+        }
+
+
 
         public void executeCommand()
         {
@@ -645,26 +714,26 @@ namespace WpfApp1
                 string[] commands = this.Command.Split(' ');
                 switch (commands[0])
                 {
-                    case("moveto");
-                        drawMoveto(commands);
+                    case ("moveto"):
+                        drawMoveTo(commands);
                         break;
-                    case("drawto");
-                        drawDrawto(commands); break;
-                    case ("clear");
+                    case("drawto"):
+                        drawDrawTo(commands); break;
+                    case ("clear"):
                         drawClear();
                         break;
-                    case("reset");
+                    case("reset"):
                         drawReset();
                         break;
-                    case ("rectangle");
+                    case ("rectangle"):
                         drawRectangle(commands); break;
-                    case ("circle");
+                    case ("circle"):
                         drawCircle(commands); break;
-                    case ("triangle");
+                    case ("triangle"):
                         drawTriangle(commands); break;
-                    case ("pen");
+                    case ("pen"):
                         drawPen(commands); break;
-                    case ("fill");
+                    case ("fill"):
                         drawFill(commands); break;
                 }
 

@@ -25,8 +25,8 @@
         <TextBox x:Name="txtCommand" HorizontalAlignment="Left" Margin="38,557,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="562" Background="White" Height="23"/>
         <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="678,12,0,0" VerticalAlignment="Top" Width="40" Height="22" Background="#FFFFE0C0"/>
         <Button x:Name="btnLoad" Content="Load" HorizontalAlignment="Left" Margin="730,11,0,0" VerticalAlignment="Top" RenderTransformOrigin="-4.941,0.683" Width="40" Height="23" Background="#FFFFE0C0"/>
-        <Button x:Name="btnRun" Content="Run" HorizontalAlignment="Left" Margin="784,11,0,0" VerticalAlignment="Top" Width="40" Height="23" Background="#FF80FF80"/>
-        <Button x:Name="btnExecute" Content="Execute" HorizontalAlignment="Left" Margin="644,548,0,0" VerticalAlignment="Top" Width="74" Height="23" Background="#FF80FF80"/>
+        <Button x:Name="btnRun" Content="Run" HorizontalAlignment="Left" Margin="784,11,0,0" VerticalAlignment="Top" Width="40" Height="23" Background="#FF80FF80" Click="btnRun_Click_1"/>
+        <Button x:Name="btnExecute" Content="Execute" HorizontalAlignment="Left" Margin="626,557,0,0" VerticalAlignment="Top" Width="74" Height="23" Background="#FF80FF80"/>
 
     </Grid>
 </Window>
