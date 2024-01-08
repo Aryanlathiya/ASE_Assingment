@@ -38,7 +38,9 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.method1 = new System.Windows.Forms.Button();
+            this.method2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.display)).BeginInit();
@@ -55,7 +57,7 @@
             this.groupBox1.Size = new System.Drawing.Size(605, 568);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Command Box";
+            this.groupBox1.Text = "Multiple Command Box";
             // 
             // ControlePanel
             // 
@@ -88,6 +90,7 @@
             this.display.Size = new System.Drawing.Size(879, 900);
             this.display.TabIndex = 6;
             this.display.TabStop = false;
+            this.display.Click += new System.EventHandler(this.display_Click);
             // 
             // groupBox3
             // 
@@ -99,7 +102,7 @@
             this.groupBox3.Size = new System.Drawing.Size(605, 85);
             this.groupBox3.TabIndex = 18;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Type Command here";
+            this.groupBox3.Text = "Single Line Command here";
             // 
             // commandline
             // 
@@ -108,6 +111,8 @@
             this.commandline.Name = "commandline";
             this.commandline.Size = new System.Drawing.Size(581, 26);
             this.commandline.TabIndex = 8;
+            this.commandline.TextChanged += new System.EventHandler(this.commandline_TextChanged);
+            this.commandline.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Commandline_KeyDown);
             // 
             // button4
             // 
@@ -125,7 +130,7 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.button3.Location = new System.Drawing.Point(29, 840);
+            this.button3.Location = new System.Drawing.Point(13, 840);
             this.button3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(248, 39);
@@ -137,7 +142,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.button2.Location = new System.Drawing.Point(29, 907);
+            this.button2.Location = new System.Drawing.Point(13, 907);
             this.button2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(248, 37);
@@ -159,24 +164,49 @@
             this.label1.TabIndex = 22;
             this.label1.Text = "Welcome";
             // 
-            // button5
+            // button1
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.button5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button5.Location = new System.Drawing.Point(349, 905);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(269, 39);
-            this.button5.TabIndex = 23;
-            this.button5.Text = "Open";
-            this.button5.UseVisualStyleBackColor = false;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.button1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.button1.Location = new System.Drawing.Point(349, 905);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(269, 39);
+            this.button1.TabIndex = 23;
+            this.button1.Text = "Load";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // method1
+            // 
+            this.method1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.method1.Location = new System.Drawing.Point(21, 44);
+            this.method1.Name = "method1";
+            this.method1.Size = new System.Drawing.Size(94, 37);
+            this.method1.TabIndex = 24;
+            this.method1.Text = "Method 1";
+            this.method1.UseVisualStyleBackColor = false;
+            this.method1.Click += new System.EventHandler(this.method1_Click);
+            // 
+            // method2
+            // 
+            this.method2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.method2.Location = new System.Drawing.Point(524, 44);
+            this.method2.Name = "method2";
+            this.method2.Size = new System.Drawing.Size(94, 37);
+            this.method2.TabIndex = 25;
+            this.method2.Text = "Method 2";
+            this.method2.UseVisualStyleBackColor = false;
+            this.method2.Click += new System.EventHandler(this.method2_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1568, 978);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.method2);
+            this.Controls.Add(this.method1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -208,7 +238,9 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button method1;
+        private System.Windows.Forms.Button method2;
     }
 }
 

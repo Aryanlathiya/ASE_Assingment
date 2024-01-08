@@ -6,8 +6,18 @@ using System.Threading.Tasks;
 
 namespace Application_2
 {
+
+    /// <summary>
+    /// Factory class for creating instances of different shapes.
+    /// </summary>
     public class shapeFactory
     {
+
+        /// <summary>
+        /// Gets an instance of a shape based on the specified shape type.
+        /// </summary>
+        /// <param name="shapeType">The type of shape to create (e.g., "circle", "rect", "triangle").</param>
+        /// <returns>An instance of the requested shape.</returns>
         public Shape getShape(String shapeType)
         {
             shapeType = shapeType.ToLower().Trim();
