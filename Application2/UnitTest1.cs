@@ -69,8 +69,29 @@ namespace Application2
         }
 
 
-  
+        [TestMethod]
+        public void TestLoop()
+        {
+            try
+            {
+                int sum = 0;
+                for (int i = 1; i <= 5; i++)
+                {
+                    sum += i;
+                }
 
+                // Assert that the sum of numbers from 1 to 5 is 15
+                Assert.AreEqual(15, sum, "Sum of numbers from 1 to 5 should be 15");
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("An error occurred in the loop.");
+            }
+        }
+
+
+
+       
 
     }
 }

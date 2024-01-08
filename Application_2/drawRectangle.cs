@@ -54,7 +54,6 @@ namespace Application_2
 
 
 
-
         /// <summary>
         /// Draws the rectangle using the specified Graphics object, Pen, and Brush.
         /// </summary>

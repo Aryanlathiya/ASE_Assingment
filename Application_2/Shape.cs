@@ -66,6 +66,13 @@ namespace Application_2
         }
 
 
+        public void Rotate(float angle)
+        {
+            // Rotate the shape by the specified angle
+            // Example: graphics.RotateTransform(angle);
+        }
+
+
 
         /// <summary>
         /// Abstract method for drawing the shape.

@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -52,6 +53,7 @@ namespace Application_2
 
         private ArrayList Currentline = new ArrayList();
         private List<string> syntaxErrors = new List<string>();
+        private SolidBrush currentBrush;
 
         public Form1()
         {
@@ -60,6 +62,9 @@ namespace Application_2
         }
 
 
+
+
+       
 
 
         public void excecuteCommand(ArrayList Currentline, string[] lines, int linecount)
@@ -92,6 +97,7 @@ namespace Application_2
 
                     switch (elements[0].ToLower())
                     {
+                        
                         case "circle":
 
                             int radius;
@@ -388,6 +394,8 @@ namespace Application_2
                             jump = 0;
                             iffaslse = false;
                             break;
+
+                        
                         case "drawcustomshape":
                             int circleSize, rectangleWidth, rectangleHeight, triangleSize;
 
@@ -469,6 +477,8 @@ namespace Application_2
 
 
         }
+
+        
 
         private bool ifcheck(int left, string condition, int right) // used to check if sattment 
         {
@@ -1059,6 +1069,60 @@ namespace Application_2
             doorRectangle.Draw(g, pen, brush);
         }
 
+        private void DrawKite(Graphics g, Pen pen, Brush brush, int width, int height, int tailLength)
+        {
+            int centerX = display.Width / 2;
+            int centerY = display.Height / 2;
+
+            // Points for the kite shape
+            Point topPoint = new Point(centerX, centerY - height / 2);
+            Point bottomPoint = new Point(centerX, centerY + height / 2);
+            Point leftPoint = new Point(centerX - width / 2, centerY);
+            Point rightPoint = new Point(centerX + width / 2, centerY);
+            Point tailEndPoint = new Point(centerX, centerY + height / 2 + tailLength);
+
+            // Array of points for the kite shape
+            Point[] kitePoints = { topPoint, leftPoint, bottomPoint, rightPoint };
+
+            // Draw the kite shape
+            g.DrawPolygon(pen, kitePoints);
+            g.FillPolygon(brush, kitePoints);
+
+            // Draw the tail
+            g.DrawLine(pen, bottomPoint, tailEndPoint);
+        }
+
+
+        private void DrawCar(Graphics g, Pen pen, Brush brush, int carWidth, int carHeight)
+        {
+            int centerX = display.Width / 2;
+            int centerY = display.Height / 2;
+
+            // Body of the car
+            Rectangle carBody = new Rectangle(centerX - carWidth / 2, centerY - carHeight / 2, carWidth, carHeight);
+
+            // Roof of the car
+            Point roofTopLeft = new Point(centerX - carWidth / 4, centerY - carHeight / 2);
+            Point roofTopRight = new Point(centerX + carWidth / 4, centerY - carHeight / 2);
+            Point roofBottomLeft = new Point(centerX - carWidth / 2, centerY - carHeight / 4);
+
+            // Wheels of the car
+            Rectangle wheel1 = new Rectangle(centerX - carWidth / 4 - carWidth / 10, centerY + carHeight / 4, carWidth / 5, carHeight / 5);
+            Rectangle wheel2 = new Rectangle(centerX + carWidth / 4, centerY + carHeight / 4, carWidth / 5, carHeight / 5);
+
+            // Draw the car
+            g.FillRectangle(brush, carBody);
+            g.DrawRectangle(pen, carBody);
+            g.FillPolygon(brush, new Point[] { roofTopLeft, roofTopRight, roofBottomLeft });
+            g.DrawLine(pen, roofTopLeft, roofTopRight);
+            g.DrawLine(pen, roofTopLeft, roofBottomLeft);
+            g.DrawLine(pen, roofTopRight, roofBottomLeft);
+            g.FillEllipse(brush, wheel1);
+            g.DrawEllipse(pen, wheel1);
+            g.FillEllipse(brush, wheel2);
+            g.DrawEllipse(pen, wheel2);
+        }
+
 
 
         private void ExampleTask1()
@@ -1103,6 +1167,47 @@ namespace Application_2
             display.Refresh();
         }
 
+
+        private void ExampleTask3()
+        {
+            Graphics g = Graphics.FromImage(display.Image);
+            Pen pen = new Pen(Color.Black, 2);
+            Brush brush = new SolidBrush(Color.Red);
+
+            // Specify the sizes
+            int kiteWidth = 60;
+            int kiteHeight = 80;
+            int tailLength = 20;
+
+            // Call the DrawKite method
+            DrawKite(g, pen, brush, kiteWidth, kiteHeight, tailLength);
+            MessageBox.Show("Drawing completed!");
+
+
+            // Refresh the display after drawing
+            display.Refresh();
+
+        }
+
+
+        private void ExampleTask4() 
+        {
+            Graphics g = Graphics.FromImage(display.Image);
+            Pen pen = new Pen(Color.Black, 2);
+            Brush brush = new SolidBrush(Color.Blue);
+
+            // Specify the sizes
+            int carWidth = 100;
+            int carHeight = 40;
+
+            // Call the DrawCar method
+            DrawCar(g, pen, brush, carWidth, carHeight);
+            MessageBox.Show("Drawing completed!");
+
+            // Refresh the display after drawing
+            display.Refresh();
+
+        }
 
         private void button1_Click(object sender, EventArgs e) //load file to richtextbox
         {
@@ -1190,6 +1295,16 @@ namespace Application_2
         {
             ExampleTask1();
 
+        }
+
+        private void method3_Click(object sender, EventArgs e)
+        {
+            ExampleTask3();
+        }
+
+        private void method4_Click(object sender, EventArgs e)
+        {
+            ExampleTask4();
         }
 
         // For method2Button click event

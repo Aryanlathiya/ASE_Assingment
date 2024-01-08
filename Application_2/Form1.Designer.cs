@@ -41,6 +41,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.method1 = new System.Windows.Forms.Button();
             this.method2 = new System.Windows.Forms.Button();
+            this.method3 = new System.Windows.Forms.Button();
+            this.method4 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.display)).BeginInit();
@@ -54,7 +56,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.groupBox1.Size = new System.Drawing.Size(605, 568);
+            this.groupBox1.Size = new System.Drawing.Size(605, 438);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Multiple Command Box";
@@ -65,7 +67,7 @@
             this.ControlePanel.Location = new System.Drawing.Point(8, 25);
             this.ControlePanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ControlePanel.Name = "ControlePanel";
-            this.ControlePanel.Size = new System.Drawing.Size(589, 537);
+            this.ControlePanel.Size = new System.Drawing.Size(589, 400);
             this.ControlePanel.TabIndex = 7;
             this.ControlePanel.Text = "";
             // 
@@ -179,10 +181,10 @@
             // 
             // method1
             // 
-            this.method1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.method1.Location = new System.Drawing.Point(21, 44);
+            this.method1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.method1.Location = new System.Drawing.Point(13, 584);
             this.method1.Name = "method1";
-            this.method1.Size = new System.Drawing.Size(94, 37);
+            this.method1.Size = new System.Drawing.Size(248, 37);
             this.method1.TabIndex = 24;
             this.method1.Text = "Method 1";
             this.method1.UseVisualStyleBackColor = false;
@@ -190,20 +192,44 @@
             // 
             // method2
             // 
-            this.method2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.method2.Location = new System.Drawing.Point(524, 44);
+            this.method2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.method2.Location = new System.Drawing.Point(349, 584);
             this.method2.Name = "method2";
-            this.method2.Size = new System.Drawing.Size(94, 37);
+            this.method2.Size = new System.Drawing.Size(269, 37);
             this.method2.TabIndex = 25;
             this.method2.Text = "Method 2";
             this.method2.UseVisualStyleBackColor = false;
             this.method2.Click += new System.EventHandler(this.method2_Click);
+            // 
+            // method3
+            // 
+            this.method3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.method3.Location = new System.Drawing.Point(13, 656);
+            this.method3.Name = "method3";
+            this.method3.Size = new System.Drawing.Size(248, 38);
+            this.method3.TabIndex = 26;
+            this.method3.Text = "Method 3";
+            this.method3.UseVisualStyleBackColor = false;
+            this.method3.Click += new System.EventHandler(this.method3_Click);
+            // 
+            // method4
+            // 
+            this.method4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.method4.Location = new System.Drawing.Point(349, 656);
+            this.method4.Name = "method4";
+            this.method4.Size = new System.Drawing.Size(269, 38);
+            this.method4.TabIndex = 27;
+            this.method4.Text = "Method 4";
+            this.method4.UseVisualStyleBackColor = false;
+            this.method4.Click += new System.EventHandler(this.method4_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1568, 978);
+            this.Controls.Add(this.method4);
+            this.Controls.Add(this.method3);
             this.Controls.Add(this.method2);
             this.Controls.Add(this.method1);
             this.Controls.Add(this.button1);
@@ -241,6 +267,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button method1;
         private System.Windows.Forms.Button method2;
+        private System.Windows.Forms.Button method3;
+        private System.Windows.Forms.Button method4;
     }
 }
 
