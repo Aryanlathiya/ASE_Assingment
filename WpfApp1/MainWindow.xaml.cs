@@ -31,7 +31,7 @@ namespace WpfApp1
         }
 
 
-        private void btnExecute_Click(object sender, RoutedEventArgs e)
+        private void btnExecute_Click_1(object sender, RoutedEventArgs e)
         {
             if(txtCommand.Text.Trim() == "run")
             {
@@ -96,7 +96,7 @@ namespace WpfApp1
 
 
        
-        private void btnRun_Click(object sender, RoutedEventArgs e)
+        private void btnRun_Click_1(object sender, RoutedEventArgs e)
         {
             foreach (string command in txtProgram.Text.Split('\n'))
             {
