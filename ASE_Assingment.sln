@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reassessment_Part_2", "Reas
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp_Reassesent", "WpfApp_Reassesent\WpfApp_Reassesent.csproj", "{E7929C5D-96B1-46BE-A1F4-FB3522FB95EE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp_Reassessment", "WpfApp_Reassessment\WpfApp_Reassessment.csproj", "{5C3F450C-384D-40BE-9EF2-D314913BF9CC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{E7929C5D-96B1-46BE-A1F4-FB3522FB95EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E7929C5D-96B1-46BE-A1F4-FB3522FB95EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E7929C5D-96B1-46BE-A1F4-FB3522FB95EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C3F450C-384D-40BE-9EF2-D314913BF9CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C3F450C-384D-40BE-9EF2-D314913BF9CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C3F450C-384D-40BE-9EF2-D314913BF9CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C3F450C-384D-40BE-9EF2-D314913BF9CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
